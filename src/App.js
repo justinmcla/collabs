@@ -3,6 +3,8 @@ import { BrowserRouter as Router, Route } from 'react-router-dom'
 import Splash from './containers/Splash'
 import Home from './containers/Home'
 
+// Altered code
+
 const App = () => (
   <Router>
     <div className="App">
