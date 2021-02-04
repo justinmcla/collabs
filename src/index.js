@@ -9,8 +9,8 @@ ReactDOM.render(
     clientId="EsyBndC2rhQKoQmnSmOe8T1syJVvkb2v"
     redirectUri={'http://localhost:3000/home'}
   >
-  <React.StrictMode>
-    <App />
+    <React.StrictMode>
+      <App />
     </React.StrictMode>
   </Auth0Provider>,
   document.getElementById('root')
