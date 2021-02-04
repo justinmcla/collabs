@@ -5,6 +5,8 @@ import Home from './containers/Home'
 
 // Altered code
 
+// Another comment
+
 const App = () => (
   <Router>
     <div className="App">
