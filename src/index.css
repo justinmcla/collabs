@@ -13,4 +13,13 @@
     @apply to-blue-500;
     @apply via-pink-400;
   }
+  @variants hover {
+    .animated-gradient {
+      @apply bg-gradient-to-br;
+      @apply from-yellow-400;
+      @apply to-blue-500;
+      @apply via-pink-400;
+      @apply animate-gradient-xy;
+    }
+  }
 }
