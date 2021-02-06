@@ -6,6 +6,15 @@ module.exports = {
       'header': ['Montserrat', 'sans-serif'],
       'body': ['Lato', 'sans-serif']
     },
+    extend: {
+      colors: {
+        themeGreen: "#0BD904",
+        themeDarkGreen: "#09A603",
+        themeDandelion: "#F2B705",
+        themeOrange: "#728705",
+        themeRed: "#F20505"
+      },
+  },
   },
   variants: {
     extend: {},
