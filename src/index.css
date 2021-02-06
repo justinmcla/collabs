@@ -1,3 +1,16 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer utilities {
+  .text-gradient {
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  .themed-gradient {
+    @apply bg-gradient-to-br;
+    @apply from-yellow-400;
+    @apply to-blue-500;
+    @apply via-pink-400;
+  }
+}
