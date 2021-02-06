@@ -14,10 +14,27 @@ module.exports = {
         themeOrange: "#728705",
         themeRed: "#F20505"
       },
-  },
+      'animation': {
+        'gradient-xy':'gradient-xy 2s ease infinite',
+      },
+      'keyframes': {
+        'gradient-xy': {
+          '0%, 100%': {
+            'background-size':'100% 100%',
+            'background-position': 'left center'
+          },
+          '50%': {
+            'background-size':'200% 200%',
+            'background-position': 'right center'
+          }
+        }
+      }
+    },
   },
   variants: {
-    extend: {},
+    extend: {
+      animation: ['hover'],
+    },
   },
   plugins: [],
 }
