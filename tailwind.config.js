@@ -34,6 +34,7 @@ module.exports = {
   variants: {
     extend: {
       animation: ['hover'],
+      cursor: ['hover'],
     },
   },
   plugins: [],
