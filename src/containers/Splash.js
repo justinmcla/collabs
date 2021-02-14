@@ -1,4 +1,3 @@
-import React from 'react'
 import SplashTitle from '../components/SplashTitle'
 import UniversalLogin from '../components/UniversalLogin'
 

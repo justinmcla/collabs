@@ -1,5 +1,3 @@
-import React from 'react'
-
 const SplashTitle = () => {
   return (
     <div className="text-right mr-6 pr-6 border-r-2 border-black dark:border-white hover:cursor-default">

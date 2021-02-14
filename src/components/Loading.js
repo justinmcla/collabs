@@ -1,4 +1,3 @@
-import React from "react";
 import { ReactComponent as LoadingSpinner } from '../assets/LoadingSpinner.svg'
 
 const Loading = () => (
