@@ -8,11 +8,11 @@ module.exports = {
     },
     extend: {
       colors: {
-        themeGreen: "#0BD904",
-        themeDarkGreen: "#09A603",
-        themeDandelion: "#F2B705",
-        themeOrange: "#728705",
-        themeRed: "#F20505"
+        thRed: "#FA0F50",
+        thMagenta: "#D40BA7",
+        thFuscia: "#C700EB",
+        thPurple: "#7F0BD4",
+        thIndigo: "#6D31F5"
       },
       'animation': {
         'gradient-xy':'gradient-xy 2s ease infinite',
