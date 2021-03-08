@@ -12,6 +12,8 @@ ReactDOM.render(
       domain="dev--db8unc5.us.auth0.com"
       clientId="EsyBndC2rhQKoQmnSmOe8T1syJVvkb2v"
       redirectUri='http://localhost:3000/home'
+      audience={process.env.API_AUDIENCE}
+      scope='read:current_user'
     >
       <React.StrictMode>
         <App />
