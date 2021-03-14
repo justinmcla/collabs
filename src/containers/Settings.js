@@ -1,6 +1,9 @@
 const Settings = () => {
   return (
-    <div></div>
+    <div className="h-screen w-full flex flex-row flex-nowrap bg-gray-200 dark:bg-gray-800">
+      <div>
+      </div>
+    </div>
   )
 }
 
