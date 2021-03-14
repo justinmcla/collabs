@@ -1,8 +1,8 @@
 import { combineReducers } from 'redux'
-import postReducer from './callboard/post.js'
-import postHistoryReducer from './callboard/postHistory.js'
-import searchReducer from './callboard/postSearch.js'
-import settingReducer from './callboard/callboardSetting.js'
+import postReducer from './callboard/post'
+import postHistoryReducer from './callboard/postHistory'
+import searchReducer from './callboard/postSearch'
+import settingReducer from './callboard/callboardSetting'
 
 const callboardReducer = combineReducers({
   post: postReducer,

@@ -1,13 +1,13 @@
 import { combineReducers } from 'redux'
-import nameReducer from './profile/name.js'
-import imageReducer from './profile/image.js'
-import urlReducer from './profile/url.js'
-import locationReducer from './profile/location.js'
-import jobReducer from './profile/job.js'
-import educationReducer from './profile/education.js'
-import socialLinkReducer from './profile/socialLink.js'
-import languageReducer from './profile/language.js'
-import settingReducer from './profile/setting.js'
+import nameReducer from './profile/name'
+import imageReducer from './profile/image'
+import urlReducer from './profile/url'
+import locationReducer from './profile/location'
+import jobReducer from './profile/job'
+import educationReducer from './profile/education'
+import socialLinkReducer from './profile/socialLink'
+import languageReducer from './profile/language'
+import settingReducer from './profile/setting'
 
 const profileReducer = combineReducers({
   name: nameReducer,
@@ -18,7 +18,7 @@ const profileReducer = combineReducers({
   education: educationReducer,
   socialLink: socialLinkReducer,
   language: languageReducer,
-  setting: settingReducer
+  setting: settingReducer,
 })
 
 export default profileReducer

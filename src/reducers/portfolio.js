@@ -1,7 +1,7 @@
 import { combineReducers } from 'redux'
-import userReducer from './portfolio/userPortfolio.js'
-import viewReducer from './portfolio/portfolioView.js'
-import searchReducer from './portfolio/portfolioSearch.js'
+import userReducer from './portfolio/userPortfolio'
+import viewReducer from './portfolio/portfolioView'
+import searchReducer from './portfolio/portfolioSearch'
 
 const portfolioReducer = combineReducers({
   user: userReducer,
