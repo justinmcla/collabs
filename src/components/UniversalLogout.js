@@ -3,7 +3,7 @@ import { useAuth0 } from '@auth0/auth0-react'
 
 const UniversalLogout = () => {
   const { logout } = useAuth0()
-  return <button onClick={() => logout({ returnTo: window.location.origin})}>LOG OUT</button>
+  return <button className="text-white hover:text-thIndigo transform duration-300 ease-in-out" onClick={() => logout({ returnTo: window.location.origin})}>Log Out</button>
 }
 
 export default UniversalLogout
