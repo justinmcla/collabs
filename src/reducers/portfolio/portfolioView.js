@@ -1,11 +1,11 @@
 const portfolioViewReducer = (state = { portfolio: {}, isLoading: false, errors: [] }, action) => {
   switch(action.type) {
     case "NEW_PORTFOLIO_VIEW_REQUEST":
-      return { isLoading: true, ...state }
+      return { ...state, isLoading: true }
     case "PORTFOLIO_VIEW_REQUEST_FAILURE":
-      return { isLoading: false, errors: action.errors, ...state }
+      return { ...state, isLoading: false, errors: action.errors }
     case "READ_PORTFOLIO_VIEW_SUCCESS":
-      return { portfolio: action.portfolio, isLoading: false, ...state }
+      return { ...state, portfolio: action.portfolio, isLoading: false }
     default:
       return state
   }

@@ -1,18 +1,18 @@
-const locationReducer = (state = { locations: [], isLoading: false, errors: [] }, action) => {
+const locationReducer = (state = { list: [], isLoading: false, errors: [] }, action) => {
   switch(action.type) {
     case "NEW_LOCATION_REQUEST":
-      return { isLoading: true, ...state }
+      return { ...state, isLoading: true }
     case "LOCATION_REQUEST_FAILURE":
-      return { isLoading: false, errors: action.errors, ...state }
+      return { ...state, isLoading: false, errors: action.errors }
     case "CREATE_LOCATION_SUCCESS":
-      return { locations: [...state.locations, action.location], isLoading: false, ...state }
+      return { ...state, list: [...state.locations, action.location], isLoading: false }
     case "READ_LOCATIONS_SUCCESS":
-      return { locations: action.locations, isLoading: false, ...state }
+      return { ...state, list: action.locations, isLoading: false }
     case "UPDATE_LOCATIONS_SUCCESS":
-      return { locations: action.locations, isLoading: false, ...state }
+      return { ...state, list: action.locations, isLoading: false }
     case "DELETE_LOCATION_SUCCESS":
       const locations = state.locations.filter(location => location.id !== action.id)
-      return { locations: locations, isLoading: false, ...state }
+      return { ...state, list: locations, isLoading: false }
     default:
       return state
   }

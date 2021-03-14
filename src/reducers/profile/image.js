@@ -1,13 +1,13 @@
-const imageReducer = (state = { image: '', isLoading: false, errors: [] }, action) => {
+const imageReducer = (state = { url: '/default_profile_photo.png', isLoading: false, errors: [] }, action) => {
   switch(action.type) {
     case "NEW_IMAGE_REQUEST":
-      return { isLoading: true, ...state }
+      return { ...state, isLoading: true }
     case "IMAGE_REQUEST_FAILURE":
-      return { isLoading: false, errors: action.errors, ...state }
+      return { ...state, isLoading: false, errors: action.errors }
     case "READ_IMAGE_SUCCESS":
-      return { image: action.image, isLoading: false, ...state }
+      return { ...state, url: action.image, isLoading: false }
     case "UPDATE_IMAGE_SUCCESS":
-      return { image: action.image, isLoading: false, ...state }
+      return { ...state, url: action.image, isLoading: false }
     default:
       return state
   }

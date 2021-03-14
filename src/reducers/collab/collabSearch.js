@@ -1,11 +1,11 @@
-const collabSearchReducer = (state = { collabs: [], isLoading: false, errors: [] }, action) => {
+const collabSearchReducer = (state = { results: [], isLoading: false, errors: [] }, action) => {
   switch(action.type) {
     case "NEW_COLLAB_SEARCH_REQUEST":
-      return { isLoading: true, ...state }
+      return { ...state, isLoading: true }
     case "COLLAB_SEARCH_REQUEST_FAILURE":
-      return { isLoading: false, errors: action.errors, ...state }
+      return { ...state, isLoading: false, errors: action.errors }
     case "READ_COLLAB_SEARCH_SUCCESS":
-      return { collabs: action.collabs, isLoading: false, ...state }
+      return { ...state, results: action.collabs, isLoading: false }
     default:
       return state
   }

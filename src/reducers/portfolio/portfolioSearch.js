@@ -1,11 +1,11 @@
-const portfolioSearchReducer = (state = { portfolios: [], isLoading: false, errors: [] }, action) => {
+const portfolioSearchReducer = (state = { results: [], isLoading: false, errors: [] }, action) => {
   switch(action.type) {
     case "NEW_PORTFOLIO_SEARCH_REQUEST":
-      return { isLoading: true, ...state }
+      return { ...state, isLoading: true }
     case "PORTFOLIO_SEARCH_REQUEST_FAILURE":
-      return { isLoading: false, errors: action.errors, ...state }
+      return { ...state, isLoading: false, errors: action.errors }
     case "READ_PORTFOLIO_SEARCH_SUCCESS":
-      return { portfolios: action.portfolios, isLoading: false, ...state }
+      return { ...state, results: action.portfolios, isLoading: false }
     default:
       return state
   }

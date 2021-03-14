@@ -1,18 +1,18 @@
-const languageReducer = (state = { languages: [], isLoading: false, errors: [] }, action) => {
+const languageReducer = (state = { list: [], isLoading: false, errors: [] }, action) => {
   switch(action.type) {
     case "NEW_LANGUAGE_REQUEST":
-      return { isLoading: true, ...state }
+      return { ...state, isLoading: true }
     case "LANGUAGE_REQUEST_FAILURE":
-      return { isLoading: false, errors: action.errors, ...state }
+      return { ...state, isLoading: false, errors: action.errors }
     case "CREATE_LANGUAGE_SUCCESS":
-      return { languages: [...state.languages, action.language], isLoading: false, ...state }
+      return { ...state, list: [...state.languages, action.language], isLoading: false }
     case "READ_LANGUAGES_SUCCESS":
-      return { languages: action.languages, isLoading: false, ...state }
+      return { ...state, list: action.languages, isLoading: false }
     case "UPDATE_LANGUAGE_SUCCESS":
-      return { languages: action.languages, isLoading: false, ...state }
+      return { ...state, list: action.languages, isLoading: false }
     case "DELETE_LANGUAGE_SUCCESS":
       const languages = state.languages.filter(language => language.id !== action.id)
-      return { languages: languages, isLoading: false, ...state }
+      return { ...state, list: languages, isLoading: false }
     default:
       return state
   }

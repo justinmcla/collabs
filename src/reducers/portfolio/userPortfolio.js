@@ -1,18 +1,18 @@
-const userPortfolioReducer = (state = { userPortfolios: {}, isLoading: false, errors: [] }, action) => {
+const userPortfolioReducer = (state = { list: {}, isLoading: false, errors: [] }, action) => {
   switch(action.type) {
     case "NEW_USER_PORTFOLIO_REQUEST":
-      return { isLoading: true, ...state }
+      return { ...state, isLoading: true }
     case "USER_PORTFOLIO_REQUEST_FAILURE":
-      return { isLoading: false, errors: action.errors, ...state }
+      return { ...state, isLoading: false, errors: action.errors }
     case "CREATE_USER_PORTFOLIO_SUCCESS":
-      return { userPortfolios: [...state.userPortfolios, action.portfolio], isLoading: false, ...state }
+      return { ...state, userPortfolios: [...state.userPortfolios, action.portfolio], isLoading: false }
     case "READ_USER_PORTFOLIO_SUCCESS":
-      return { userPortfolios: action.userPortfolios, isLoading: false, ...state }
+      return { ...state, userPortfolios: action.userPortfolios, isLoading: false }
     case "UPDATE_USER_PORTFOLIO_SUCCESS":
-      return { userPortfolios: action.userPortfolios, isLoading: false, ...state }
+      return { ...state, userPortfolios: action.userPortfolios, isLoading: false }
     case "DELETE_USER_PORTFOLIO_SUCCESS":
       const userPortfolios = state.userPortfolios.filter(portfolio => portfolio.id !== action.id)
-      return { userPortfolios: userPortfolios, isLoading: false, ...state }
+      return { ...state, userPortfolios: userPortfolios, isLoading: false }
     default:
       return state
   }

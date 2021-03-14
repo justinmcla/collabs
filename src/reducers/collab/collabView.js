@@ -1,11 +1,11 @@
 const collabViewReducer = (state = { collab: {}, isLoading: false, errors: [] }, action) => {
   switch(action.type) {
     case "NEW_COLLAB_VIEW_REQUEST":
-      return { isLoading: true, ...state }
+      return { ...state, isLoading: true }
     case "COLLAB_VIEW_REQUEST_FAILURE":
-      return { isLoading: false, errors: action.errors, ...state }
+      return { ...state, isLoading: false, errors: action.errors }
     case "READ_COLLAB_VIEW_SUCCESS":
-      return { collab: action.collab, isLoading: false, ...state }
+      return { ...state, collab: action.collab, isLoading: false }
     default:
       return state
   }

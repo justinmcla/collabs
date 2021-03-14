@@ -1,18 +1,18 @@
-const requestHistoryReducer = (state = { collabRequests: [], isLoading: false, errors: [] }, action) => {
+const requestHistoryReducer = (state = { list: [], isLoading: false, errors: [] }, action) => {
   switch(action.type) {
     case "NEW_REQUEST_HISTORY_REQUEST":
-      return { isLoading: true, ...state }
+      return { ...state, isLoading: true }
     case "REQUEST_HISTORY_REQUEST_FAILURE":
-      return { isLoading: false, errors: action.errors, ...state }
+      return { ...state, isLoading: false, errors: action.errors }
     case "CREATE_REQUEST_HISTORY_SUCCESS":
-      return { collabRequests: [...state.collabRequests, action.post], isLoading: false, ...state }
+      return { ...state, list: [...state.collabRequests, action.post], isLoading: false }
     case "READ_REQUEST_HISTORY_SUCCESS":
-      return { collabRequests: action.collabRequests, isLoading: false, ...state }
+      return { ...state, list: action.collabRequests, isLoading: false }
     case "UPDATE_REQUEST_HISTORY_SUCCESS":
-      return { collabRequests: action.collabRequests, isLoading: false, ...state }
+      return { ...state, list: action.collabRequests, isLoading: false }
     case "DELETE_REQUEST_HISTORY_SUCCESS":
       const collabRequests = state.collabRequests.filter(post => post.id !== action.id)
-      return { collabRequests: collabRequests, isLoading: false, ...state }
+      return { ...state, list: collabRequests, isLoading: false }
     default:
       return state
   }

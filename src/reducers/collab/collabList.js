@@ -1,14 +1,14 @@
-const collabListReducer = (state = { collabs: [], isLoading: false, errors: [] }, action) => {
+const collabListReducer = (state = { list: [], isLoading: false, errors: [] }, action) => {
   switch(action.type) {
     case "NEW_COLLAB_LIST_REQUEST":
-      return { isLoading: true, ...state }
+      return { ...state, isLoading: true }
     case "COLLAB_LIST_REQUEST_FAILURE":
-      return { isLoading: false, errors: action.errors, ...state }
+      return { ...state, isLoading: false, errors: action.errors }
     case "READ_COLLAB_LIST_SUCCESS":
-      return { collabs: action.collabs, isLoading: false, ...state }
+      return { ...state, list: action.collabs, isLoading: false }
     case "DELETE_COLLAB_LIST_SUCCESS":
       const collabs = state.collabs.filter(collab => collab.id !== action.id)
-      return { collabs: collabs, isLoading: false, ...state }
+      return { ...state, list: collabs, isLoading: false }
     default:
       return state
   }

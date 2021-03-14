@@ -1,13 +1,13 @@
-const callboardSettingReducer = (state = { setting: {}, isLoading: false, errors: [] }, action) => {
+const callboardSettingReducer = (state = { options: {}, isLoading: false, errors: [] }, action) => {
   switch(action.type) {
     case "NEW_CALLBOARD_SETTING_REQUEST":
-      return { isLoading: true, ...state }
+      return { ...state, isLoading: true }
     case "CALLBOARD_SETTING_REQUEST_FAILURE":
-      return { isLoading: false, errors: action.errors, ...state }
+      return { ...state, isLoading: false, errors: action.errors }
     case "READ_CALLBOARD_SETTING_SUCCESS":
-      return { setting: action.setting, isLoading: false, ...state }
+      return { ...state, options: action.options, isLoading: false }
     case "UPDATE_CALLBOARD_SETTING_SUCCESS":
-      return { setting: action.setting, isLoading: false, ...state }
+      return { ...state, options: action.options, isLoading: false }
     default:
       return state
   }

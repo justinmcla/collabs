@@ -1,18 +1,18 @@
-const jobReducer = (state = { jobs: [], isLoading: false, errors: [] }, action) => {
+const jobReducer = (state = { list: [], isLoading: false, errors: [] }, action) => {
   switch(action.type) {
     case "NEW_JOB_REQUEST":
-      return { isLoading: true, ...state }
+      return {...state, isLoading: true }
     case "JOB_REQUEST_FAILURE":
-      return { isLoading: false, errors: action.errors, ...state }
+      return {...state, isLoading: false, errors: action.errors }
     case "CREATE_JOB_SUCCESS":
-      return { jobs: [...state.jobs, action.job], isLoading: false, ...state }
+      return {...state, list: [...state.jobs, action.job], isLoading: false }
     case "READ_JOBS_SUCCESS":
-      return { jobs: action.jobs, isLoading: false, ...state }
+      return {...state, list: action.jobs, isLoading: false }
     case "UPDATE_JOB_SUCCESS":
-      return { jobs: action.jobs, isLoading: false, ...state }
+      return {...state, list: action.jobs, isLoading: false }
     case "DELETE_JOB_SUCCESS":
       const jobs = state.jobs.filter(job => job.id !== action.id)
-      return { jobs: jobs, isLoading: false, ...state }
+      return {...state, list: jobs, isLoading: false }
     default:
       return state
   }

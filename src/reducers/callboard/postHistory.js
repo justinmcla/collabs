@@ -1,18 +1,18 @@
-const postHistoryReducer = (state = { posts: [], isLoading: false, errors: [] }, action) => {
+const postHistoryReducer = (state = { list: [], isLoading: false, errors: [] }, action) => {
   switch(action.type) {
     case "NEW_POST_HISTORY_REQUEST":
-      return { isLoading: true, ...state }
+      return { ...state, isLoading: true }
     case "POST_HISTORY_REQUEST_FAILURE":
-      return { isLoading: false, errors: action.errors, ...state }
+      return { ...state, isLoading: false, errors: action.errors }
     case "CREATE_POST_HISTORY_SUCCESS":
-      return { posts: [...state.posts, action.post], isLoading: false, ...state }
+      return { ...state, list: [...state.posts, action.post], isLoading: false }
     case "READ_POSTS_HISTORY_SUCCESS":
-      return { posts: action.posts, isLoading: false, ...state }
+      return { ...state, list: action.posts, isLoading: false }
     case "UPDATE_POST_HISTORY_SUCCESS":
-      return { posts: action.posts, isLoading: false, ...state }
+      return { ...state, list: action.posts, isLoading: false }
     case "DELETE_POST_HISTORY_SUCCESS":
       const posts = state.posts.filter(post => post.id !== action.id)
-      return { posts: posts, isLoading: false, ...state }
+      return { ...state, list: posts, isLoading: false }
     default:
       return state
   }

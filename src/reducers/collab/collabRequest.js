@@ -1,18 +1,18 @@
-const collabRequestReducer = (state = { collabRequests: [], isLoading: false, errors: [] }, action) => {
+const collabRequestReducer = (state = { list: [], isLoading: false, errors: [] }, action) => {
   switch(action.type) {
     case "NEW_COLLAB_REQUEST_REQUEST":
-      return { isLoading: true, ...state }
+      return { ...state, isLoading: true }
     case "COLLAB_REQUEST_REQUEST_FAILURE":
-      return { isLoading: false, errors: action.errors, ...state }
+      return { ...state, isLoading: false, errors: action.errors }
     case "CREATE_COLLAB_REQUEST_SUCCESS":
-      return { collabRequests: [...state.collabRequests, action.collabRequest], isLoading: false, ...state }
+      return { ...state, list: [...state.collabRequests, action.collabRequest], isLoading: false }
     case "READ_COLLAB_REQUEST_SUCCESS":
-      return { collabRequests: action.collabRequests, isLoading: false, ...state }
+      return { ...state, list: action.collabRequests, isLoading: false }
     case "UPDATE_COLLAB_REQUEST_SUCCESS":
-      return { collabRequests: action.collabRequests, isLoading: false, ...state }
+      return { ...state, list: action.collabRequests, isLoading: false }
     case "DELETE_COLLAB_REQUEST_SUCCESS":
       const collabRequests = state.collabRequests.filter(collabRequest => collabRequest.id !== action.id)
-      return { collabRequests: collabRequests, isLoading: false, ...state }
+      return { ...state, list: collabRequests, isLoading: false }
     default:
       return state
   }

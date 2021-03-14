@@ -1,13 +1,13 @@
-const urlReducer = (state = { url: '', isLoading: false, errors: [] }, action) => {
+const urlReducer = (state = { path: '', isLoading: false, errors: [] }, action) => {
   switch(action.type) {
     case "NEW_URL_REQUEST":
-      return { isLoading: true, ...state }
+      return { ...state, isLoading: true }
     case "URL_REQUEST_FAILURE":
-      return { isLoading: false, errors: action.errors, ...state }
+      return { ...state, isLoading: false, errors: action.errors }
     case "READ_URL_SUCCESS":
-      return { url: action.url, isLoading: false, ...state }
+      return { ...state, path: action.url, isLoading: false }
     case "UPDATE_URL_SUCCESS":
-      return { url: action.url, isLoading: false, ...state }
+      return { ...state, path: action.url, isLoading: false }
     default:
       return state
   }
