@@ -9,7 +9,6 @@ const readName = (accessToken) => {
         }
       })
       const json = await response.json()
-      console.log(json)
       dispatch({ type: "READ_NAME_SUCCESS", name: json.data.attributes.name })
     } catch (errors) {
       dispatch({
