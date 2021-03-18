@@ -9,9 +9,10 @@ const readImage = accessToken => {
           Authorization: `Bearer ${accessToken}`
         }
       })
+      const json = await response.json()
       dispatch({
         type: "READ_IMAGE_SUCCESS",
-        image: response.json().image
+        image: json.image
       })
     } catch (errors) {
       dispatch({
