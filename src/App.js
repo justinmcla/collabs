@@ -7,7 +7,9 @@ import Home from './containers/Home'
 import Collabs from './containers/Collabs'
 import Portfolios from './containers/Portfolios'
 import Callboard from './containers/Callboard'
-import Settings from './containers/Settings'
+import PublicProfileSettings from './containers/profile/PublicProfileSettings'
+import CollabSearch from './containers/collab/CollabSearch'
+import CollabProfile from './containers/profile/CollabProfile'
 
 const isProfilePath = window.location.pathname !== "/"
 
@@ -19,9 +21,11 @@ const App = () => (
         { isProfilePath ? <Navbar /> : null }
         <ProtectedRoute exact path="/home" component={ Home } />
         <ProtectedRoute exact path="/collabs" component={ Collabs } />
+        <ProtectedRoute exact path="/collabs/search" component={ CollabSearch } />
         <ProtectedRoute exact path="/portfolios" component={ Portfolios } />
         <ProtectedRoute exact path="/callboard" component={ Callboard } />
-        <ProtectedRoute exact path="/settings" component={ Settings } />
+        <ProtectedRoute exact path="/settings" component={ PublicProfileSettings } />
+        <ProtectedRoute path="/profile/:slug" component={ CollabProfile } />
       </div>
     </div>
   </Router>
