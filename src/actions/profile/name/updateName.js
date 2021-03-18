@@ -4,7 +4,8 @@ const updateName = (name, accessToken) => {
       type: "NEW_NAME_REQUEST"
     })
     try {
-      await fetch("http://localhost:3000/api/v1/user", {
+      const endpoint = window.localStorage.getItem('endpoint')
+      fetch(`${process.env.REACT_APP_BASE_API}/users/${endpoint}`, {
         method: 'PATCH',
         headers: {
           Authorization: `Bearer ${accessToken}`
