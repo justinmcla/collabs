@@ -35,6 +35,7 @@ const Navbar = () => {
       <div className="flex flex-col items-center justify-center">
         <NavLink to="/collabs" className="text-white hover:text-thPurple transform duration-300 ease-in-out">My Collabs</NavLink>
         <NavLink to="/collabs/search" className="text-white hover:text-thPurple transform duration-300 ease-in-out">Find Collabs</NavLink>
+        <NavLink to="/collabs/requests" className="text-white hover:text-thPurple transform duration-300 ease-in-out">Pending Collabs</NavLink>
         <NavLink to="/callboard" className="text-white hover:text-thPurple transform duration-300 ease-in-out">View Callboard</NavLink>
         <NavLink to="/portfolios" className="text-white hover:text-thPurple transform duration-300 ease-in-out">Browse Portfolios</NavLink>
         <NavLink to="/settings" className="text-white hover:text-thPurple transform duration-300 ease-in-out">Edit Public Profile</NavLink>
