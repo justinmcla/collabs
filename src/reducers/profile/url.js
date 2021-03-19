@@ -4,7 +4,7 @@ const urlReducer = (state = { path: '', isLoading: false, errors: [] }, action) 
       return { ...state, isLoading: true }
     case "URL_REQUEST_FAILURE":
       return { ...state, isLoading: false, errors: action.errors }
-    case "READ_PROFILE_SUCCESS":
+    case "READ_USER_SUCCESS":
       return { ...state, path: action.profile.url, isLoading: false }
     case "READ_URL_SUCCESS":
       return { ...state, path: action.url, isLoading: false }

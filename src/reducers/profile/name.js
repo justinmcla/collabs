@@ -6,7 +6,7 @@ const nameReducer = (state = { name: '', isLoading: false, errors: [] }, action)
       return { ...state, isLoading: false, errors: action.errors }
     case "READ_NAME_SUCCESS":
       return { ...state, name: action.name, isLoading: false }
-    case "READ_PROFILE_SUCCESS":
+    case "READ_USER_SUCCESS":
       return { ...state, name: action.profile.name, isLoading: false }
     case "UPDATE_NAME_SUCCESS":
       return { ...state, name: action.name, isLoading: false }

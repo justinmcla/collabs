@@ -6,7 +6,7 @@ const socialLinkReducer = (state = { list: [], isLoading: false, errors: [] }, a
       return { ...state, isLoading: false, errors: action.errors }
     case "CREATE_SOCIAL_LINK_SUCCESS":
       return { ...state, list: [...state.socialLinks, action.socialLink], isLoading: false }
-    case "READ_PROFILE_SUCCESS":
+    case "READ_USER_SUCCESS":
       return { ...state, list: action.profile.social_links, isLoading: false }
     case "READ_SOCIAL_LINKS_SUCCESS":
       return { ...state, list: action.socialLinks, isLoading: false }

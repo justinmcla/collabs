@@ -4,7 +4,7 @@ const locationReducer = (state = { address: {}, isLoading: false, errors: [] }, 
       return { ...state, isLoading: true }
     case "LOCATION_REQUEST_FAILURE":
       return { ...state, isLoading: false, errors: action.errors }
-    case "READ_PROFILE_SUCCESS":
+    case "READ_USER_SUCCESS":
       return { ...state, address: action.profile.location, isLoading: false }
     case "READ_LOCATION_SUCCESS":
       return { ...state, address: action.location, isLoading: false }
