@@ -4,8 +4,7 @@ const readCollabs = accessToken => {
       type: "NEW_COLLAB_LIST_REQUEST"
     })
     try {
-      const endpoint = window.localStorage.getItem('endpoint')
-      const response = await fetch(`${process.env.REACT_APP_BASE_API}/collaborations/${endpoint}`, {
+      const response = await fetch(`${process.env.REACT_APP_BASE_API}/collaborations`, {
         headers: {
           Authorization: `Bearer ${accessToken}`
         }
