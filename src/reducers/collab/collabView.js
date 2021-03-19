@@ -1,4 +1,4 @@
-const collabViewReducer = (state = { collab: {}, isLoading: false, errors: [] }, action) => {
+const collabViewReducer = (state = { collab: { social_links: [] }, isLoading: false, errors: [] }, action) => {
   switch(action.type) {
     case "NEW_COLLAB_VIEW_REQUEST":
       return { ...state, isLoading: true }
@@ -7,7 +7,7 @@ const collabViewReducer = (state = { collab: {}, isLoading: false, errors: [] },
     case "READ_COLLAB_VIEW_SUCCESS":
       return { ...state, collab: action.collab, isLoading: false }
     case "CLEAR_COLLAB_VIEW":
-      return { ...state, collab: {}, isLoading: false }
+      return { ...state, collab: { social_links: [] }, isLoading: false }
     default:
       return state
   }
