@@ -3,7 +3,7 @@ import ProfilePhoto from './profile/ProfilePhoto'
 import { NavLink } from 'react-router-dom'
 import { useSelector, useDispatch } from 'react-redux'
 import { useEffect } from 'react'
-import readProfile from '../actions/profile/readProfile'
+import readUser from '../actions/profile/readUser'
 import { useAuth0 } from '@auth0/auth0-react'
 
 const Navbar = () => {
@@ -23,7 +23,7 @@ const Navbar = () => {
       })
       const data = await response.json()
       window.localStorage.setItem('endpoint', data.user)
-      dispatch(readProfile(token))
+      dispatch(readUser(token))
     })()
   }, [dispatch, getAccessTokenSilently])
 
