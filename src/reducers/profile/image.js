@@ -6,6 +6,8 @@ const imageReducer = (state = { url: '/default_profile_photo.png', isLoading: fa
       return { ...state, isLoading: false, errors: action.errors }
     case "READ_IMAGE_SUCCESS":
       return { ...state, url: action.image, isLoading: false }
+    case "READ_USER_SUCCESS":
+      return { ...state, url: action.profile.image_url, isLoading: false }
     case "UPDATE_IMAGE_SUCCESS":
       return { ...state, url: action.image, isLoading: false }
     default:
