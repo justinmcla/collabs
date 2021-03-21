@@ -2,7 +2,7 @@ const readRequests = accessToken => {
   return async dispatch => {
     dispatch({ type: "NEW_COLLAB_REQUEST_REQUEST"})
     try {
-      const response = await fetch(`${process.env.REACT_APP_BASE_API}/collaboration_requests`, {
+      const response = await fetch(`${process.env.REACT_APP_BASE_API}/collaborations/pending`, {
         headers: {
           Authorization: `Bearer ${accessToken}`
         }
