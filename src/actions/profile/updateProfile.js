@@ -13,7 +13,7 @@ const updateProfile = (accessToken, data) => {
       })
       const json = await response.json()
       if (json.status === 200) {
-        dispatch({ type: "UPDATE_PROFILE_SUCCESS", profile: json.data })
+        dispatch({ type: "UPDATE_PROFILE_SUCCESS", payload: json.data })
       } else {
         throw new Error(json.errors)
       }
