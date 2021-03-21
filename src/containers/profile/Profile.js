@@ -1,35 +1,46 @@
-import { useSelector } from 'react-redux'
-import Address from '../../components/profile/Address'
-import SocialIcon from '../../components/profile/SocialIcon'
+import { useDispatch, useSelector } from 'react-redux'
+import { useEffect } from 'react'
+import { useAuth0 } from '@auth0/auth0-react'
+import readPosts from '../../actions/callboard/readPosts'
+import Post from '../../components/callboard/Post'
 
 const Profile = () => {
-  const { name, about, image, location, job, socialLink } = useSelector(state => state.profile)
+  const { getAccessTokenSilently } = useAuth0()
+  const dispatch = useDispatch()
+  const profile = useSelector(state => state.profile.data)
+  const posts = useSelector(state => state.callboard.post.list)
+
+  useEffect(() => {
+    (async () => {
+      const token = await getAccessTokenSilently()
+      dispatch(readPosts(token, profile.user_id))
+    })()
+  }, [dispatch, getAccessTokenSilently, profile.user_id])
 
   return (
-    <div className="h-screen w-full flex flex-row flex-nowrap bg-gray-200 dark:bg-gray-800">
+    <div className="w-full flex flex-row flex-nowrap bg-gray-200 dark:bg-gray-800">
       <div className="p-8">
         <div className="flex flex-row items-center">
-          <img src={ image.url } alt={ name.name } className="border-4 rounded-full shadow-lg w-36"/>
+          <img src={ profile.image_url } alt={ profile.name } className="border-4 rounded-full shadow-lg w-36"/>
           <div className="flex flex-col ml-6 text-gray-700 dark:text-gray-300 font-body cursor-default">
-            <h1 className="text-4xl">{ name.name }</h1>
-            <h2 className="text-2xl">{ job.title }</h2>
-            <h2 className="text-2xl"><Address { ...location.address } /></h2>
+            <h1 className="text-4xl">{ profile.name }</h1>
+            <h2 className="text-2xl">{ profile.profession }</h2>
+            <h2 className="text-2xl">{ profile.city }, { profile.state }</h2>
             <div className="flex flex-row fill-current">
-              { socialLink.list.map(link => <SocialIcon {...link} /> )}
             </div>
           </div>
         </div>
         <div className="text-gray-700 dark:text-gray-300 m-6">
           <h2 className="text-lg">About</h2>
           <p>
-            { about.text }
+            { profile.about }
           </p>
         </div>
         <div className="text-gray-700 dark:text-gray-300 m-6">
-          <h2 className="text-lg">Portfolios</h2>
-          <p>
-
-          </p>
+          <h2 className="text-lg">Posts</h2>
+          <div>
+            { posts.map(post => <Post post={ post } key={ post.id } />) }
+          </div>
         </div>
       </div>
     </div>
