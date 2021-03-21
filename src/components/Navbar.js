@@ -4,6 +4,7 @@ import { NavLink } from 'react-router-dom'
 import { useSelector, useDispatch } from 'react-redux'
 import { useEffect } from 'react'
 import readUser from '../actions/profile/readUser'
+import authenticateUser from '../actions/authenticateUser'
 import { useAuth0 } from '@auth0/auth0-react'
 
 const Navbar = () => {
