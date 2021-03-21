@@ -22,11 +22,11 @@ const Callboard = () => {
     <div className="w-full flex flex-row flex-nowrap bg-gray-200 dark:bg-gray-800 overflow-auto">
       <div className="p-8">
         <h1 className="text-4xl text-gray-700 dark:text-gray-300 font-body italic">View posts on your callboard.</h1>
-        <div className="flex flex-col">
-          <NewPostForm />
-          <PostSearchForm />
-        </div>
-        <div className="flex flex-wrap">
+        <div className="flex flex-row flex-wrap">
+          <div className="w-96 justify-center">
+            <NewPostForm />
+            <PostSearchForm />
+          </div>
           { posts.map(post => <Post post={ post } key={ post.id }/>) }
         </div>
       </div>
