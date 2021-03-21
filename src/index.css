@@ -13,6 +13,14 @@
     @apply to-blue-500;
     @apply via-pink-400;
   }
+
+  .input-field {
+    @apply p-1;
+    @apply bg-transparent;
+    @apply border-b-2;
+    @apply border-thFuscia;
+  }
+
   @variants hover {
     .animated-gradient {
       @apply bg-gradient-to-br;
