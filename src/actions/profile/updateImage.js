@@ -1,7 +1,7 @@
 const updateImage = (image, accessToken) => {
   return async dispatch => {
     dispatch({
-      type: "NEW_IMAGE_REQUEST"
+      type: "NEW_PROFILE_REQUEST"
     })
     try {
       const endpoint = window.localStorage.getItem('endpoint')
@@ -14,13 +14,13 @@ const updateImage = (image, accessToken) => {
       })
       const json = await response.json()
       if (json.status === 200) {
-        dispatch({ type: "UPDATE_IMAGE_SUCCESS", image: json.data.image_url })
+        dispatch({ type: "UPDATE_IMAGE_SUCCESS", payload: json.data.image_url })
       } else {
         throw new Error('Unable to update image')
       }
     } catch (errors) {
       dispatch({
-        type: "IMAGE_REQUEST_FAILURE",
+        type: "PROFILE_REQUEST_FAILURE",
         errors: errors
       })
     }
