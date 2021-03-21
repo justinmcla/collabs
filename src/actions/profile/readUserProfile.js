@@ -1,6 +1,6 @@
 const readUser = accessToken => {
   return async dispatch => {
-    dispatch({ type: "NEW_USER_REQUEST" })
+    dispatch({ type: "NEW_PROFILE_REQUEST" })
     try {
       const endpoint = window.localStorage.getItem('endpoint')
       const response = await fetch(`${process.env.REACT_APP_BASE_API}/users/${endpoint}`, {
@@ -9,9 +9,9 @@ const readUser = accessToken => {
         }
       })
       const json = await response.json()
-      dispatch({ type: "READ_USER_SUCCESS", profile: json })
+      dispatch({ type: "READ_PROFILE_SUCCESS", payload: json.data })
     } catch (errors) {
-      dispatch({ type: "READ_USER_FAILURE", errors: errors })
+      dispatch({ type: "PROFILE_REQUEST_FAILURE", errors: errors })
     }
   }
 }
