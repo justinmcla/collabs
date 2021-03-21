@@ -78,6 +78,7 @@ const CollabStatusButton = ({ userId }) => {
           className="bg-blue-200 rounded-md p-1 w-20 transform ease-in-out duration-300 hover:bg-blue-300"
           onClick={handleConfirmClick}
           >Confirm</button>
+        { ' ' }
         <button
           className="bg-red-300 rounded-md p-1 w-20 transform ease-in-out duration-300 hover:bg-red-400"
           onClick={handleDeleteClick}
