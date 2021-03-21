@@ -13,6 +13,26 @@
     @apply to-blue-500;
     @apply via-pink-400;
   }
+
+  .input-field {
+    @apply p-1;
+    @apply bg-transparent;
+    @apply border-b-2;
+    @apply border-thMagenta;
+    @apply outline-none;
+    @apply dark:text-white;
+  }
+
+  .submit-btn {
+    @apply p-3;
+    @apply m-4;
+    @apply transform;
+    @apply hover:bg-green-200;
+    @apply ease-in-out;
+    @apply duration-300;
+    @apply cursor-pointer;
+  }
+
   @variants hover {
     .animated-gradient {
       @apply bg-gradient-to-br;
