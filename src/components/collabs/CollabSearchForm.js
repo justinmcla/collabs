@@ -1,7 +1,7 @@
 import { useState, useCallback } from 'react'
 import { useDispatch } from 'react-redux'
 import { useAuth0 } from '@auth0/auth0-react'
-import queryCollabs from '../../actions/collabs/queryCollabs'
+import queryCollabs from '../../actions/collabs/collabSearch/queryCollabs'
 
 const CollabSearchForm = () => {
   const [value, setValue] = useState('')
