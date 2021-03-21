@@ -1,8 +1,8 @@
-const readPosts = accessToken => {
+const readPosts = (accessToken, userId) => {
   return async dispatch => {
     dispatch({ type: "NEW_POST_REQUEST" })
     try {
-      const response = await fetch(`${process.env.REACT_APP_BASE_API}/posts`, {
+      const response = await fetch(`${process.env.REACT_APP_BASE_API}/posts/${userId}`, {
         headers: {
           Authorization: `Bearer ${accessToken}`
         }
