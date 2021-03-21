@@ -3,13 +3,13 @@ import { useDispatch, useSelector } from 'react-redux'
 import { useAuth0 } from '@auth0/auth0-react'
 import { ReactComponent as Check } from '../../assets/Check.svg'
 import { ReactComponent as LoadingSpinner } from '../../assets/LoadingSpinner.svg'
-import updateImage from '../../actions/profile/image/updateImage'
+import updateImage from '../../actions/profile/updateImage'
 
 const ProfilePhotoForm = () => {
   const [fileLoaded, setFileLoaded] = useState(0)
   const dispatch = useDispatch()
   const { getAccessTokenSilently } = useAuth0()
-  const isLoading = useSelector(state => state.profile.image.isLoading)
+  const isLoading = useSelector(state => state.profile.isLoading)
 
   const handleSubmit = useCallback(
     async event => {
