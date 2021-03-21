@@ -10,10 +10,10 @@ const collabRequestsReducer = (state = { list: [], isLoading: false, errors: [] 
     case "READ_COLLAB_REQUEST_SUCCESS":
       return { ...state, list: action.collabRequests, isLoading: false }
     case "UPDATE_COLLAB_REQUEST_SUCCESS":
-      collabRequests = state.list.filter(collabRequest => collabRequest.id != action.collabRequest.id)
+      collabRequests = state.list.filter(collabRequest => collabRequest.id !== action.collabRequest.id)
       return { ...state, list: collabRequests, isLoading: false }
     case "DELETE_COLLAB_REQUEST_SUCCESS":
-      collabRequests = state.list.filter(collabRequest => collabRequest.id != action.id)
+      collabRequests = state.list.filter(collabRequest => collabRequest.id !== action.id)
       return { ...state, list: collabRequests, isLoading: false }
     default:
       return state
