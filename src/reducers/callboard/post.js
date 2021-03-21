@@ -5,7 +5,7 @@ const postReducer = (state = { list: [], isLoading: false, errors: [] }, action)
     case "POST_REQUEST_FAILURE":
       return { ...state, isLoading: false, errors: action.errors }
     case "CREATE_POST_SUCCESS":
-      return { ...state, list: [...state.posts, action.post], isLoading: false }
+      return { ...state, list: [action.post, ...state.list], isLoading: false }
     case "READ_POSTS_SUCCESS":
       return { ...state, list: action.posts, isLoading: false }
     case "UPDATE_POST_SUCCESS":
