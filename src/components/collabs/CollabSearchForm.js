@@ -17,12 +17,10 @@ const CollabSearchForm = () => {
   )
 
   return (
-    <div>
-      <form onSubmit={ handleSubmit }>
-        <input type="text" value={value} onChange={event => setValue(event.target.value)} className="bg-gray-200 dark:bg-gray-800 p-1 border-thMagenta border-b-2 outline-none dark:text-white"/>
-        <input type="submit" value="Search" className="m-2 p-1 border-thMagenta bg-transparent border-2 text-thMagenta"/>
-      </form>
-    </div>
+    <form className="m-4 max-w-lg grid grid-cols-1 grid-flow-row gap-4" onSubmit={ handleSubmit }>
+      <input placeholder="Search by name or profession..." type="text" value={value} onChange={event => setValue(event.target.value)} className="input-field"/>
+      <input type="submit" value="Search" className="submit-btn"/>
+    </form>
   )
 }
 

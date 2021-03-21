@@ -21,9 +21,12 @@ const CollabSearch = () => {
     <div className="w-full flex flex-row flex-nowrap bg-gray-200 dark:bg-gray-800 overflow-auto">
       <div className="p-8">
         <h1 className="text-4xl text-gray-700 dark:text-gray-300 font-body italic cursor-default">Find your next collaborator.</h1>
-        <br />
-        <CollabSearchForm />
-        { collabs.map(collab => <CollabCard profile={ collab } key={ collab.id } />) }
+        <div className="flex flex-row flex-wrap">
+          <div className="w-96">
+            <CollabSearchForm />
+          </div>
+          { collabs.map(collab => <CollabCard profile={ collab } key={ collab.id } />) }
+        </div>
       </div>
     </div>
   )
