@@ -1,12 +1,12 @@
 import { combineReducers } from 'redux'
 import collabListReducer from './collab/collabList'
-import collabRequestReducer from './collab/collabRequest'
+import collabRequestsReducer from './collab/collabRequests'
 import viewReducer from './collab/collabView'
 import searchReducer from './collab/collabSearch'
 
 const collabReducer = combineReducers({
   collabList: collabListReducer,
-  collabRequest: collabRequestReducer,
+  collabRequest: collabRequestsReducer,
   view: viewReducer,
   search: searchReducer
 })
