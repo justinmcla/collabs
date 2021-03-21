@@ -1,7 +1,7 @@
 import createRequest from '../../actions/collabs/collabRequests/createRequest'
 import { useDispatch, useSelector } from 'react-redux'
 import { useAuth0 } from '@auth0/auth0-react'
-import { useState, useCallback } from 'react'
+import { useState, useCallback, useEffect } from 'react'
 import deleteRequest from '../../actions/collabs/collabRequests/deleteRequest'
 import confirmRequest from '../../actions/collabs/collabRequests/confirmRequest'
 
@@ -10,11 +10,19 @@ const CollabStatusButton = ({ userId }) => {
   const dispatch = useDispatch()
   const collabs = useSelector(state => state.collab.collabList.list)
   const requests = useSelector(state => state.collab.collabRequest.list)
-  const isCollab = collabs.some(collab => collab.sender.user_id === userId || collab.receiver.user_id === userId)
-  const isPending = requests.some(collab => collab.sender.user_id === userId || collab.receiver.user_id === userId)
-  const isSender = [...collabs, ...requests].some(collab => collab.receiver.user_id === userId)
+  const [status, setStatus] = useState({})
 
-  const [status, setStatus] = useState({ isPending: isPending, isCollab: isCollab, isSender: isSender })
+  useEffect(() => {
+    const isCollab = collabs.some(collab => collab.sender.user_id === userId || collab.receiver.user_id === userId)
+    const isPending = requests.some(collab => collab.sender.user_id === userId || collab.receiver.user_id === userId)
+    const isSender = [...collabs, ...requests].some(collab => collab.receiver.user_id === userId)
+    setStatus({
+      isCollab: isCollab,
+      isPending: isPending,
+      isSender: isSender
+    })
+    }, [collabs, requests, userId]
+  )
 
   const handleAddClick = useCallback(
     async event => {
