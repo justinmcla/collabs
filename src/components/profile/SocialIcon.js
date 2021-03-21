@@ -8,19 +8,19 @@ import { ReactComponent as Youtube } from '../../assets/Youtube.svg'
 
 const SocialIcon = ({ provider, handle }) => {
   switch(provider) {
-    case "Facebook":
+    case "facebook":
       return <a href={`https://facebook.com/${ handle }`} className="p-1 transform hover:text-thMagenta duration-300 ease-in-out"><Facebook /></a>
-    case "Github":
+    case "github":
       return <a href={`https://github.com/${ handle }`} className="p-1 transform hover:text-thMagenta duration-300 ease-in-out"><Github /></a>
-    case "Instagram":
+    case "instagram":
       return <a href={`https://instagram.com/${ handle }`} className="p-1 transform hover:text-thMagenta duration-300 ease-in-out"><Instagram /></a>
-    case "LinkedIn":
+    case "linkedin":
       return <a href={`https://linkedin.com/${ handle }`} className="p-1 transform hover:text-thMagenta duration-300 ease-in-out"><LinkedIn /></a>
-    case "Medium":
+    case "medium":
       return <a href={`https://medium.com/${ handle }`} className="p-1 transform hover:text-thMagenta duration-300 ease-in-out"><Medium /></a>
-    case "Twitter":
+    case "twitter":
       return <a href={`https://twitter.com/${ handle }`} className="p-1 transform hover:text-thMagenta duration-300 ease-in-out"><Twitter /></a>
-    case "Youtube":
+    case "youtube":
       return <a href={`https://youtube.com/${ handle }`} className="p-1 transform hover:text-thMagenta duration-300 ease-in-out"><Youtube /></a>
     default:
       return null
