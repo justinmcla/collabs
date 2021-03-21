@@ -146,7 +146,7 @@ const EditProfile = () => {
         <label htmlFor="youtube" className="mx-4"><Youtube /></label>
         <input id="youtube" name="youtube" value={formData.youtube} defaultValue={ profile.youtube } onChange={handleChange} className="input-field flex-grow" />
       </div>
-      <input type="submit" value="Save Changes" className="p-3 m-4 transform hover:bg-green-200 ease-in-out duration-300 cursor-pointer" />
+      <input type="submit" value="Save Changes" className="submit-btn" />
     </form>
   )
 }
