@@ -21,7 +21,7 @@ const Navbar = () => {
   }, [dispatch, getAccessTokenSilently])
 
   return (
-    <div className="h-screen themed-gradient w-64">
+    <div className="themed-gradient w-64">
       <NavLink to="/home"><h1 className="font-header font-extrabold text-white text-5xl text-center m-6">collabs</h1></NavLink>
       <ProfilePhoto image={ image_url } name={ name }/>
       <NavLink to="/profile"><h2 className="text-center text-2xl font-body font-bold text-white m-6">{ name }</h2></NavLink>
@@ -30,7 +30,6 @@ const Navbar = () => {
         <NavLink to="/collabs/search" className="text-white hover:text-thPurple transform duration-300 ease-in-out">Find Collabs</NavLink>
         <NavLink to="/collabs/requests" className="text-white hover:text-thPurple transform duration-300 ease-in-out">Pending Collabs</NavLink>
         <NavLink to="/callboard" className="text-white hover:text-thPurple transform duration-300 ease-in-out">View Callboard</NavLink>
-        <NavLink to="/portfolios" className="text-white hover:text-thPurple transform duration-300 ease-in-out">Browse Portfolios</NavLink>
         <NavLink to="/settings" className="text-white hover:text-thPurple transform duration-300 ease-in-out">Edit Public Profile</NavLink>
         <UniversalLogout />
       </div>
