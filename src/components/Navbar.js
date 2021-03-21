@@ -15,15 +15,8 @@ const Navbar = () => {
   useEffect(() => {
     (async () => {
       const token = await getAccessTokenSilently()
-      const response = await fetch('http://localhost:3001/v1/sessions', {
-        method: 'POST',
-        headers: {
-          Authorization: `Bearer ${token}`
-        }
-      })
-      const data = await response.json()
-      window.localStorage.setItem('endpoint', data.user)
-      dispatch(readUser(token))
+      await authenticateUser(token)
+      dispatch(readUserProfile(token))
     })()
   }, [dispatch, getAccessTokenSilently])
 
