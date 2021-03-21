@@ -23,7 +23,7 @@ const CollabSearch = () => {
         <h1 className="text-4xl text-gray-700 dark:text-gray-300 font-body italic cursor-default">Find your next collaborator.</h1>
         <br />
         <CollabSearchForm />
-        { collabs.map(collab => <CollabCard profile={ collab } key={ collab.uuid } type="search" />) }
+        { collabs.map(collab => <CollabCard profile={ collab } key={ collab.id } />) }
       </div>
     </div>
   )
