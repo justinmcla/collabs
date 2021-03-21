@@ -3,8 +3,8 @@ import { useSelector, useDispatch } from 'react-redux'
 import { useAuth0 } from '@auth0/auth0-react'
 import viewCollab from '../../actions/collabs/collabView/viewCollab'
 import readPosts from '../../actions/callboard/readPosts'
-import SocialIcon from '../../components/profile/SocialIcon'
 import CollabStatusButton from '../../components/collabs/CollabStatusButton'
+import SocialIconBar from '../../components/profile/SocialIconBar'
 import Post from '../../components/callboard/Post'
 
 const CollabProfile = () => {
@@ -38,10 +38,10 @@ const CollabProfile = () => {
             <h1 className="text-4xl">{ collab.name }</h1>
             <h2 className="text-2xl">{ collab.profession }</h2>
             <h2 className="text-2xl">{ collab.city }, { collab.state }</h2>
-            <div className="flex flex-row fill-current">
-              {/* { collab.social_links.map(link => <SocialIcon {...link} key={link.id} /> )} */}
-            </div>
-            <div className="ml-auto">
+            <div className="flex flex-row justify-between">
+              <div className="flex flex-row fill-current">
+                <SocialIconBar profile={ collab } />
+              </div>
               { renderStatusButton() }
             </div>
           </div>

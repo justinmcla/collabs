@@ -3,6 +3,7 @@ import { useEffect } from 'react'
 import { useAuth0 } from '@auth0/auth0-react'
 import readPosts from '../../actions/callboard/readPosts'
 import Post from '../../components/callboard/Post'
+import SocialIconBar from '../../components/profile/SocialIconBar'
 
 const Profile = () => {
   const { getAccessTokenSilently } = useAuth0()
@@ -27,6 +28,7 @@ const Profile = () => {
             <h2 className="text-2xl">{ profile.profession }</h2>
             <h2 className="text-2xl">{ profile.city }, { profile.state }</h2>
             <div className="flex flex-row fill-current">
+              <SocialIconBar profile={ profile }/>
             </div>
           </div>
         </div>
