@@ -5,7 +5,6 @@ import ProtectedRoute from './auth/ProtectedRoute'
 import Splash from './containers/Splash'
 import Home from './containers/Home'
 import Collabs from './containers/collab/Collabs'
-import Portfolios from './containers/portfolios/Portfolios'
 import Callboard from './containers/callboard/Callboard'
 import PublicProfileSettings from './containers/profile/PublicProfileSettings'
 import CollabSearch from './containers/collab/CollabSearch'
@@ -17,9 +16,9 @@ const isProfilePath = window.location.pathname !== "/"
 
 const App = () => (
   <Router>
-    <div className="App h-full">
+    <div className="App">
       <Route exact path="/" component={ Splash } />
-      <div className="flex flex-row flex-nowrap">
+      <div className="flex flex-row flex-nowrap h-screen">
         { isProfilePath ? <Navbar /> : null }
         <ProtectedRoute exact path="/home" component={ Home } />
         <ProtectedRoute exact path="/profile" component={ Profile } />
@@ -27,7 +26,6 @@ const App = () => (
         <ProtectedRoute exact path="/collabs" component={ Collabs } />
         <ProtectedRoute exact path="/collabs/search" component={ CollabSearch } />
         <ProtectedRoute exact path="/collabs/requests" component={ CollabRequests } />
-        <ProtectedRoute exact path="/portfolios" component={ Portfolios } />
         <ProtectedRoute exact path="/callboard" component={ Callboard } />
         <ProtectedRoute exact path="/settings" component={ PublicProfileSettings } />
       </div>
