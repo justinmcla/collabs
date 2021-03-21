@@ -97,14 +97,16 @@ const CollabStatusButton = ({ userId }) => {
   }
 
   const collabStatus = () => {
-    if (!status.isPending && !status.isCollab) {
+    if (status.isPending === false && status.isCollab === false) {
       return createAddButton()
-    } else if (!status.isPending && status.isCollab) {
+    } else if (status.isPending === false && status.isCollab === true) {
       return createDeleteButton()
-    } else if (status.isPending && status.isSender) {
+    } else if (status.isPending === true && status.isSender === true) {
       return createCancelButton()
-    } else {
+    } else if (status.isPending === true && status.isSender === false) {
       return createConfirmDeleteButton()
+    } else {
+      return null
     }
   }
 
