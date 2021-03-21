@@ -6,8 +6,12 @@ const collabListReducer = (state = { list: [], isLoading: false, errors: [] }, a
       return { ...state, isLoading: false, errors: action.errors }
     case "READ_COLLAB_LIST_SUCCESS":
       return { ...state, list: action.collabs, isLoading: false }
+    case "CREATE_COLLAB_REQUEST_SUCCESS":
+    case "UPDATE_COLLAB_REQUEST_SUCCESS":
+      return { ...state, list: [...state.list, action.collabRequest ], isLoading: false }
     case "DELETE_COLLAB_LIST_SUCCESS":
-      const collabs = state.collabs.filter(collab => collab.id !== action.id)
+    case "DELETE_COLLAB_REQUEST_SUCCESS":
+      const collabs = state.list.filter(collab => collab.id !== action.id)
       return { ...state, list: collabs, isLoading: false }
     default:
       return state
