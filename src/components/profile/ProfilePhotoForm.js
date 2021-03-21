@@ -30,10 +30,10 @@ const ProfilePhotoForm = () => {
     return (
     <div>
       <form className="flex flex-row items-center" onSubmit={ handleSubmit } id="imageUpload">
-        <label htmlFor="fileInput" className="p-4 bg-gray-100 dark:bg-gray-700 cursor-pointer transform hover:shadow-lg hover:bg-green-200 ease-in-out duration-300">Change Profile Image</label>
+        <label htmlFor="fileInput" className="p-3 bg-gray-100 dark:bg-gray-700 cursor-pointer transform hover:shadow-lg hover:bg-green-200 ease-in-out duration-300">Change Profile Image</label>
         <input type="file" id="fileInput" name="fileInput" className="hidden" onInput={ () => setFileLoaded(1) } />
         <span>{ fileLoaded === 1 ? <Check className="w-4 ml-4 fill-current text-green-500"/> : null }</span>
-        <input type="submit" value="Submit" className="m-4 p-3 bg-gray-100 dark:bg-gray-700 cursor-pointer hover:bg-green-200 ease-in-out duration-300"/>
+        <input type="submit" value="Upload" className="m-4 p-3 bg-gray-100 dark:bg-gray-700 cursor-pointer hover:bg-green-200 ease-in-out duration-300"/>
       </form>
     </div>
     )
