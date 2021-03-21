@@ -17,8 +17,8 @@ const PostSearchForm = () => {
   )
 
   return (
-    <form className="m-4 flex-shrink-0" onSubmit={ handleSubmit }>
-      <input type="text" value={value} onChange={event => setValue(event.target.value)} className="bg-gray-200 dark:bg-gray-800 p-1 border-thMagenta border-b-2 outline-none dark:text-white"/>
+    <form className="m-4 flex flex-row" onSubmit={ handleSubmit }>
+      <input className="w-64" placeholder="Search by title or message..." type="text" value={value} onChange={event => setValue(event.target.value)} className="bg-gray-200 dark:bg-gray-800 p-1 border-thMagenta border-b-2 outline-none dark:text-white"/>
       <input type="submit" value="Search" className="m-2 p-1 border-thMagenta bg-transparent border-2 text-thMagenta"/>
     </form>
   )
