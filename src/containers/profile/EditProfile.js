@@ -14,7 +14,7 @@ const EditProfile = () => {
   const profile = useSelector(state => state.profile.data)
   const dispatch = useDispatch()
   const { getAccessTokenSilently } = useAuth0()
-  const [formData, setFormData] = useState({})
+  const [formData, setFormData] = useState({...profile})
 
   const handleChange = useCallback(
     event => setFormData({
@@ -34,17 +34,17 @@ const EditProfile = () => {
   return (
     <form className="grid grid-flow-row gap-4 m-4" onSubmit={handleSubmit}>
       <label className="text-sm" htmlFor="name">NAME</label>
-      <input id="name" type="text" name="name" onChange={handleChange} value={formData.name} defaultValue={ profile.name } className="input-field"/>
+      <input id="name" type="text" name="name" onChange={handleChange} value={formData.name} className="input-field"/>
       <label className="text-sm" htmlFor="profession">PROFESSION</label>
-      <input id="profession" type="text" name="profession" onChange={handleChange} value={formData.profession} defaultValue={ profile.profession } className="input-field"/>
+      <input id="profession" type="text" name="profession" onChange={handleChange} value={formData.profession} className="input-field"/>
       <div className="flex flex-row justify-between align-bottom">
         <div>
           <label className="text-sm" htmlFor="city">CITY</label><br />
-          <input id="city" type="text" name="city" onChange={handleChange} value={formData.city} defaultValue={ profile.city } className="input-field"/>
+          <input id="city" type="text" name="city" onChange={handleChange} value={formData.city} className="input-field"/>
         </div>
         <div>
           <label className="text-sm" htmlFor="state">STATE</label><br />
-          <select id="state" name="state" value={formData.state} onChange={handleChange} defaultValue={ profile.state } className="input-field mt-1">
+          <select id="state" name="state" value={formData.state} onChange={handleChange} className="input-field mt-1">
             <option value="AL">AL</option>
             <option value="AK">AK</option>
             <option value="AZ">AZ</option>
@@ -108,43 +108,43 @@ const EditProfile = () => {
         </div>
         <div>
           <label className="text-sm" htmlFor="zip">ZIP</label><br />
-          <input id="zip" type="text" name="zip" onChange={handleChange} value={formData.zip} defaultValue={ profile.zip } className="input-field"/>
+          <input id="zip" type="text" name="zip" onChange={handleChange} value={formData.zip} className="input-field"/>
         </div>
       </div>
       <label className="text-sm" htmlFor="about">ABOUT</label>
-      <textarea id="about" name="about" onChange={handleChange} value={formData.about} defaultValue={ profile.about } className="input-field"></textarea>
+      <textarea id="about" name="about" onChange={handleChange} value={formData.about} className="input-field"></textarea>
       <label className="text-sm" htmlFor="url">PUBLIC URL</label>
       <div className="flex flex-row">
-        <span>/</span><input className="ml-1 input-field flex-grow" id="url" type="text" name="url" onChange={handleChange} value={formData.url} defaultValue={ profile.url } />
+        <span>/</span><input className="ml-1 input-field flex-grow" id="url" type="text" name="url" onChange={handleChange} value={formData.url} />
       </div>
       <span className="text-sm">SOCIAL LINKS</span>
       <div className="flex flex-row">
         <label htmlFor="facebook" className="mx-4"><Facebook /></label>
-        <input id="facebook" name="facebook" value={formData.facebook} defaultValue={ profile.facebook } onChange={handleChange} className="input-field flex-grow" />
+        <input id="facebook" name="facebook" value={formData.facebook} onChange={handleChange} className="input-field flex-grow" />
       </div>
       <div className="flex flex-row">
         <label htmlFor="instagram" className="mx-4"><Instagram /></label>
-        <input id="instagram" name="instagram" value={formData.instagram} defaultValue={ profile.instagram } onChange={handleChange} className="input-field flex-grow" />
+        <input id="instagram" name="instagram" value={formData.instagram} onChange={handleChange} className="input-field flex-grow" />
       </div>
       <div className="flex flex-row">
         <label htmlFor="twitter" className="mx-4"><Twitter /></label>
-        <input id="twitter" name="twitter" value={formData.twitter} defaultValue={ profile.twitter } onChange={handleChange} className="input-field flex-grow" />
+        <input id="twitter" name="twitter" value={formData.twitter} onChange={handleChange} className="input-field flex-grow" />
       </div>
       <div className="flex flex-row">
         <label htmlFor="linkedin" className="mx-4"><LinkedIn /></label>
-        <input id="linkedin" name="linkedin" value={formData.linkedin} defaultValue={ profile.linkedin } onChange={handleChange} className="input-field flex-grow" />
+        <input id="linkedin" name="linkedin" value={formData.linkedin} onChange={handleChange} className="input-field flex-grow" />
       </div>
       <div className="flex flex-row">
         <label htmlFor="medium" className="mx-4"><Medium /></label>
-        <input id="medium" name="medium" value={formData.medium} defaultValue={ profile.medium } onChange={handleChange} className="input-field flex-grow" />
+        <input id="medium" name="medium" value={formData.medium} onChange={handleChange} className="input-field flex-grow" />
       </div>
       <div className="flex flex-row">
         <label htmlFor="github" className="mx-4"><Github /></label>
-        <input id="github" name="github" value={formData.github} defaultValue={ profile.github } onChange={handleChange} className="input-field flex-grow" />
+        <input id="github" name="github" value={formData.github} onChange={handleChange} className="input-field flex-grow" />
       </div>
       <div className="flex flex-row">
         <label htmlFor="youtube" className="mx-4"><Youtube /></label>
-        <input id="youtube" name="youtube" value={formData.youtube} defaultValue={ profile.youtube } onChange={handleChange} className="input-field flex-grow" />
+        <input id="youtube" name="youtube" value={formData.youtube} onChange={handleChange} className="input-field flex-grow" />
       </div>
       <input type="submit" value="Save Changes" className="submit-btn" />
     </form>

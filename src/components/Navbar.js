@@ -6,6 +6,8 @@ import { useEffect } from 'react'
 import readUserProfile from '../actions/profile/readUserProfile'
 import authenticateUser from '../actions/authenticateUser'
 import { useAuth0 } from '@auth0/auth0-react'
+import readCollabs from '../actions/collabs/collabList/readCollabs'
+import readRequests from '../actions/collabs/collabRequests/readRequests'
 
 const Navbar = () => {
   const { name, image_url } = useSelector(state => state.profile.data)
@@ -17,6 +19,8 @@ const Navbar = () => {
       const token = await getAccessTokenSilently()
       await authenticateUser(token)
       dispatch(readUserProfile(token))
+      dispatch(readCollabs(token))
+      dispatch(readRequests(token))
     })()
   }, [dispatch, getAccessTokenSilently])
 

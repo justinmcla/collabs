@@ -33,7 +33,7 @@ const CollabProfile = () => {
     <div className="w-full flex flex-row flex-nowrap bg-gray-200 dark:bg-gray-800">
       <div className="p-8">
         <div className="flex flex-row items-center">
-          <img src={ collab.image || '/default_profile_photo.png' } alt={ collab.name } className="border-4 rounded-full shadow-lg w-36"/>
+          <img src={ collab.image_url || '/default_profile_photo.png' } alt={ collab.name } className="border-4 rounded-full shadow-lg w-36"/>
           <div className="flex flex-col ml-6 text-gray-700 dark:text-gray-300 font-body cursor-default">
             <h1 className="text-4xl">{ collab.name }</h1>
             <h2 className="text-2xl">{ collab.profession }</h2>
