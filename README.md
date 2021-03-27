@@ -1,70 +1,51 @@
 # Collabs
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Collabs is a social network for creatives to find new collaborators to work with on artistic endeavors. This client-side single-page application is built in React with Redux, and is served by a back-end API built on Ruby on Rails. Stylings are provided using TailwindCSS utilities.
 
-## Available Scripts
+## Getting Started
 
-In the project directory, you can run:
+##### SPA
 
-### `yarn start`
+Up-to-date package dependencies are laid out in the `package.json` file. Upon cloning to your local machine, assuming you have `node` and a package manager installed, you can run `yarn`/`npm i` to install necessary dependencies.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+##### API/DB
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+The back-end is served by a Ruby on Rails API, located here: <a href="https://github.com/justinmcla/collabs-api">Collabs API</a>. Clone this repository to your local machine as well. Additional instructions on setting up the API are located in the API's `README.md` file.
 
-### `yarn test`
+##### Environment Variables
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+You will need to create a `.env` file in the `root` directory and declare several environment variables.
 
-### `yarn build`
+- REACT_APP_BASE_API
+- REACT_APP_AUTH0_API_AUDIENCE
+- REACT_APP_AUTH0_REDIRECT_URI
+- REACT_APP_AUTH0_DOMAIN
+- REACT_APP_AUTH0_CLIENT_ID
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Currently, the API defaults to running on `localhost:3001` in development mode, and so `REACT_APP_BASE_API` should be set to: `http://localhost:3001/v1/`
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+For security purposes, please contact Justin at justin [at] devjwm [dot] net for assistance on getting set up with the Auth0 environment variables.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Contributing
 
-### `yarn eject`
+Fork and clone this repository to your local environment. To keep things organized, please use the following naming system for new branches:
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+```shell
+ft/bg - change - issue number
+```
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+For example, a branch made to close this issue:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+<strong><em>Issue #17 - Reset form button does not clear form</em></strong>
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+Should be named:
 
-## Learn More
+```shell
+bg-resetbuttonfix-17
+```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Pull requests will be reviewed as they are received. Contributions should be limited to bug fixes, unless the feature request is marked as cleared for contribution.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## License
 
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+MIT.
