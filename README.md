@@ -4,11 +4,9 @@ Collabs is a social network for creatives to find new collaborators to work with
 
 ## Getting Started
 
-### Dependencies
-
 ##### SPA
 
-Up-to-date package dependencies are laid out in the `package.json` file. Upon cloning to your local machine, assuming you have `node` and a package manager installed, you can run `yarn`/`npm i` to install necessary dependencies. 
+Up-to-date package dependencies are laid out in the `package.json` file. Upon cloning to your local machine, assuming you have `node` and a package manager installed, you can run `yarn`/`npm i` to install necessary dependencies.
 
 ##### API/DB
 
@@ -18,11 +16,11 @@ The back-end is served by a Ruby on Rails API, located here: <a href="https://gi
 
 You will need to create a `.env` file in the `root` directory and declare several environment variables.
 
-* REACT_APP_BASE_API
-* REACT_APP_AUTH0_API_AUDIENCE
-* REACT_APP_AUTH0_REDIRECT_URI
-* REACT_APP_AUTH0_DOMAIN
-* REACT_APP_AUTH0_CLIENT_ID
+- REACT_APP_BASE_API
+- REACT_APP_AUTH0_API_AUDIENCE
+- REACT_APP_AUTH0_REDIRECT_URI
+- REACT_APP_AUTH0_DOMAIN
+- REACT_APP_AUTH0_CLIENT_ID
 
 Currently, the API defaults to running on `localhost:3001` in development mode, and so `REACT_APP_BASE_API` should be set to: `http://localhost:3001/v1/`
 
